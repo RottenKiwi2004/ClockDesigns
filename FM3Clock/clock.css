@@ -1,0 +1,82 @@
+:root {
+    --primary-dark: #375854;
+    --primary-darker: #294a47;
+    --primary-light: #9cffe7;
+    --accent: #d7efa5;
+    --accent2: #75ab52;
+    --gray1: #bfbfbf;
+    --gray2: #8d8d8d;
+    --gray3: #4a4a4a;
+
+    --leaderboard-rank-height: 100px;
+    --leaderboard-rank-width: 400px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "IBM Plex Sans Thai";
+}
+
+body {
+    background: var(--primary-dark);
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.background {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.background > img {
+    opacity: 0.2;
+    height: 100vh;
+}
+
+.clockContainer {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 250px;
+}
+
+.digit {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.colon {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.pixel.on, .colon .pixel:nth-child(8), .colon .pixel:nth-child(20) {
+    width: 30px;
+    height: 30px;
+    background: var(--accent);
+    box-shadow: 0 0 30px var(--accent2);
+    transform: scale(1.3);
+    transition: 0.3s;
+}
+
+.pixel.off {
+    width: 30px;
+    height: 30px;
+    transform: scale(1);
+    background: transparent;
+    border: transparent;
+    transition: 0.3s;
+}
